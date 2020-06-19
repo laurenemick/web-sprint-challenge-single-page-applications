@@ -1,6 +1,12 @@
 import React from 'react'
+import { useRouteMatch } from 'react-router-dom'
 
-export default function Confirmation({order}) {
+export default function Order({order}) {
+    const { url, path } = useRouteMatch()
+
+    console.log('url from the hook', url)
+    console.log('path from the hook', path)
+
       if (!order) {
         return <h3>Working fetching your order...</h3>
       }

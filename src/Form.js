@@ -1,4 +1,5 @@
 import React from 'react'
+import { useRouteMatch } from 'react-router-dom'
 
 export default function Form(props) {
     const {
@@ -9,6 +10,11 @@ export default function Form(props) {
         disabled,
         errors,
     } = props
+
+    const { url, path } = useRouteMatch()
+
+    console.log('url from the hook', url)
+    console.log('path from the hook', path)
 
     return (
         <form className='form-container' onSubmit={onSubmit}>
@@ -103,6 +109,7 @@ export default function Form(props) {
             <br />
             <div className='errors'>
                 <div>{errors.name}</div>
+                <div>{errors.size}</div>
             </div>
         </form>
     )

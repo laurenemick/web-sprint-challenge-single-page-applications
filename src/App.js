@@ -6,7 +6,7 @@ import * as Yup from 'yup'
 import Home from './Home'
 import Form from './Form'
 import formSchema from './formSchema'
-import Confirmation from './Confirmation'
+import Order from './Order'
 
 const initialFormValues = {
   /// Text Inputs ///
@@ -80,7 +80,7 @@ export default function App() {
     console.log('submitted!')
 
     axios
-      .post('http://localhost:3004/confirmation', formValues)
+      .post('https://reqres.in/api/users', formValues)
       .then(res => {
         setOrders([...orders, res.data]);
         console.log("Success", res);
@@ -104,16 +104,16 @@ export default function App() {
         <div className='nav-links'>
           <Link to='/'>Home</Link>
           <br />
-          <Link to='/'>Help</Link>
+          <Link to='/pizza/order'>Cart</Link>
         </div>
       </nav>
   
       <Switch>
-        <Route path="/confirmation">
+        <Route path="/pizza/order">
           {
           orders.map(order => {
             return (
-              <Confirmation key={order.id} order={order} />
+              <Order key={order.id} order={order} />
             )
           })
           }
