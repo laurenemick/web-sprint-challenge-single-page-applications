@@ -36,8 +36,11 @@ Demonstrate your understanding of this week's concepts by answering the followin
 
 	2. How would you explain form validation to someone who has never programmed before?
 
+    It's a way to prevent human error. For example, if the user types in the wrong field, the form tells you to correct your mistake.
 
 	3. In 1-2 sentences, define end to end testing.
+
+    End to end testing looks at the entire user experience, focusing on the UI and mimicking how a user might interact with an app. This kind of testing simulates real events like button clicks, scrolls, form submits, etc.
 
 
 ## Instructions
